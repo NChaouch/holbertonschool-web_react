@@ -8,6 +8,11 @@ interface Teacher {
     [key: string]: any;
 }
 
+// directors interface extends teacher
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
 //creation of an object of type teacher
 const Teacher1: Teacher = {
     firstName: "Nour",
