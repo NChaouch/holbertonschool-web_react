@@ -27,3 +27,15 @@ Teacher1.fullTimeEmployee = false;
 Teacher1["departement"] = "French";
 
 console.log(Teacher1);
+
+// print teacher function
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+// implementation of printteacher function
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+console.log(printTeacher("Nounoush", "Nono"));
