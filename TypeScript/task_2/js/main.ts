@@ -65,3 +65,18 @@ function executeWork(employee: Director | Teacher): void {
 // for work
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000))); // directror tasks
+
+// string type subject
+type Subjects = "Math" | "History";
+
+// function teach a class from subject
+function teachClass(todayClass: Subjects): string {
+    if (todayClass === "Math") {
+        return "Teaching Math";
+    } else {
+        return "Teaching History";
+    }
+}
+
+console.log(teachClass("Math"));
+console.log(teachClass("History"));
