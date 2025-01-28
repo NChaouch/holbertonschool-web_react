@@ -44,6 +44,24 @@ function createEmployee(salary: number | string): Director | Teacher  {
     }
 }
 
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee("$500"));
+console.log(createEmployee(200)); // Teacher
+console.log(createEmployee(1000)); // Director
+console.log(createEmployee("$500")); // Director
+
+// function for checks if the employee is a director
+function isDirector(employee: Director | Teacher): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+}
+
+// execute work based for thetype employee
+function executeWork(employee: Director | Teacher): void {
+    if (isDirector(employee)) {
+        console.log(employee.workDirectorTasks());
+    } else {
+        console.log(employee.workTeacherTasks());
+    }
+}
+
+// for work
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000))); // directror tasks
